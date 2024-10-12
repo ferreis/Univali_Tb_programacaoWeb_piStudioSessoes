@@ -18,7 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-blue-500">
             <div>
                 <a href="/">
-                    <h2 class="font-roboto text-gray-600 text-5xl font-bold custom-shadow opacity-75"> My Meds </h2>
+                    <h2 class="font-roboto text-gray-600 text-5xl font-bold custom-shadow opacity-90"> {{ __("PinhaStudios \n Sessões") }} </h2>
                 </a>
             </div>
 
