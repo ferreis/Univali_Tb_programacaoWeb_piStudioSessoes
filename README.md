@@ -8,9 +8,10 @@
 </p>
 
 
-##Para iniciar o Server:
+## Para iniciar o Server:
 php artisan server
-##para o fort-end:
+
+## para o fort-end:
 npm run dev
 
 ## About Laravel
