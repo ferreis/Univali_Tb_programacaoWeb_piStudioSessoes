@@ -18,6 +18,7 @@ class ClientesFactory extends Factory
     public function definition(): array
     {
         return [
+            'nome' => $this->faker->name(),
             'razao_social' => $this->faker->unique()->name(),
             'nome_fantasia' => $this->faker->name(),
             'cnpj' => $this->faker->unique()->cnpj(),
@@ -30,7 +31,6 @@ class ClientesFactory extends Factory
             'pais' => $this->faker->country(),
             'ultima_sessao' => $this->faker->date(),
             'prox_sessao' => $this->faker->date(),
-            'tipo_cliente' => $this->faker->word(),
         ];
     }
 }

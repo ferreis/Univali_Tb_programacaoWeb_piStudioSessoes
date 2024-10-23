@@ -4,16 +4,21 @@
             {{ __('Adicionar Cliente') }}
         </h2>
         </x-slot>
-        <x-bladewind::card class="mx-8 mt-8 grid">
+        <x-bladewind::card class="mx-8 mt-8 grid p-8">
             <form method="POST" action="{{ route("cliente.store") }}">
                 @csrf
                 <div class="grid grid-cols-3 gap-x-4 gap-y-2">
-                    <x-bladewind::input 
+                    <x-bladewind::input
+                    name="nome"
+                    prefix="Nome"
+                    class="rounded-lg"
+                    />
+                    <x-bladewind::input
                     name="razao_social"
                     prefix="Razão Social"
                     class="rounded-lg"
                     />
-                    <x-bladewind::input 
+                    <x-bladewind::input
                     name="nome_fantasia"
                     prefix="Nome Fantasia"
                     class="rounded-lg"
@@ -68,13 +73,16 @@
                     class="rounded-lg"
                     type="date"
                     />
+                    <x-bladewind::select
+                    name="tipo"
+                    value_key="id"
+                    label_key="nome"
+                    :data="$tipo" />
                     <div>
-                    <storng>Tipo de cliente:</storng>
+                    <storng>Contrato:</storng>
                         <div>
-                            <x-bladewind::radio-button label="Semanal" name="tipo"  value="semanal"/>
-                            <x-bladewind::radio-button label="Mensal" name="tipo"  value="mensal"/>
-                            <x-bladewind::radio-button label="Por Sessão" name="tipo"  value="porSessão"/>
-                            <x-bladewind::radio-button label="Indefinido" name="tipo" value="Indefinido"/>
+                            <x-bladewind::radio-button label="Com contrato" name="contrato"  value="com"/>
+                            <x-bladewind::radio-button label="Sem contrato" name="contrato"  value="sem"/>
                         </div>
                     </div>
                 </div>

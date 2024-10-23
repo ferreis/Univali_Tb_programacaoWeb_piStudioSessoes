@@ -16,6 +16,7 @@ class ClientesSeeder extends Seeder
         // Loop para criar 10 clientes
         for ($i = 0; $i < 10; $i++) {
             Cliente::create([
+                'nome' => 'Nome ' . $i,
                 'razao_social' => 'Razão Social ' . $i,
                 'nome_fantasia' => 'Nome Fantasia ' . $i,
                 'cnpj' => '00.000.000/000' . $i,
@@ -28,7 +29,6 @@ class ClientesSeeder extends Seeder
                 'pais' => 'País ' . $i,
                 'ultima_sessao' => now()->subDays(rand(1, 30)),
                 'prox_sessao' => now()->addDays(rand(1, 30)),
-                'tipo_cliente' => 'Tipo ' . $i,
             ]);
         }
     }

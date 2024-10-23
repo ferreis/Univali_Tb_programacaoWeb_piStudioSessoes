@@ -10,6 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("Você está logado") }}
+                    <!-- Criar o tipoCliente.create -->
+                    <!-- criar o tipoCliente.update -->
                 </div>
             </div>
         </div>

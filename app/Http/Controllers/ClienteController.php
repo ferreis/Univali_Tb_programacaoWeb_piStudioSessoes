@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App\Models\TipoClientes;
 use Illuminate\Support\Facades\Redirect;
 
 class ClienteController extends Controller
@@ -15,7 +16,9 @@ class ClienteController extends Controller
     }
     public function create()
     {
-        return view('cliente.create');
+        $tipo = TipoClientes::all();
+
+        return view('cliente.create' , compact('tipo'));
     }
     public function store(Request $request)
     {
