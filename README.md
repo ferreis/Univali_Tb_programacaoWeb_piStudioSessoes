@@ -17,6 +17,7 @@ cd repo-laravel
 Instale todas as dependências do Composer:
 ```
 composer install
+npm install
 ```
 
 #### Passo 3: Configurar o Ambiente
