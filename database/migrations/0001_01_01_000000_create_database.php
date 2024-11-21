@@ -46,6 +46,7 @@ return new class extends Migration
             $table->string('key')->primary();
             $table->mediumText('value');
             $table->integer('expiration');
+
         });
 
         Schema::create('cache_locks', function (Blueprint $table) {
