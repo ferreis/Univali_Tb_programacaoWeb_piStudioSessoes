@@ -31,19 +31,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function medico()
-    {
-        return $this->hasOne(Medico::class, 'usuario');
-    }
-
-    public function farmaceutico()
-    {
-        return $this->hasOne(Farmaceutico::class, 'usuario');
-    }
-
-    public function paciente()
-    {
-        return $this->hasOne(Paciente::class, 'usuario');
-    }
 }

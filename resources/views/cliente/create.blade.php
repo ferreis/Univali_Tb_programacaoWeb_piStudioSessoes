@@ -81,8 +81,8 @@
                     <div>
                     <storng>Contrato:</storng>
                         <div>
-                            <x-bladewind::radio-button label="Com contrato" name="contrato"  value="com"/>
-                            <x-bladewind::radio-button label="Sem contrato" name="contrato"  value="sem"/>
+                            <x-bladewind::radio-button label="Com contrato" name="contrato"  value="1"/>
+                            <x-bladewind::radio-button label="Sem contrato" name="contrato"  value="0"/>
                         </div>
                     </div>
                 </div>

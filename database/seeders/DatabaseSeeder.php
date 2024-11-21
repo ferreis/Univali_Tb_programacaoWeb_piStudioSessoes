@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Rafael',
-            'email' => 'rafa_ferreis@hotmail.com',
-            'username' => 'ferreis',
+            'name' => 'Guest',
+            'email' => 'Guest@hotmail.com',
+            'username' => 'teste',
             'password' => bcrypt('1234'),
             'telefone' => '47999999999',
             'cpf' => '27368859025', //https://www.4devs.com.br/gerador_de_cpf
@@ -39,6 +39,8 @@ class DatabaseSeeder extends Seeder
                 'pais' => 'País ' . $i,
                 'ultima_sessao' => now()->subDays(rand(1, 30)),
                 'prox_sessao' => now()->addDays(rand(1, 30)),
+                'contrato' => rand(0, 1),
+                'tipo_cliente_id' => rand(1, 10),
             ]);
         }
     }

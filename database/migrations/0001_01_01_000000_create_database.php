@@ -96,10 +96,10 @@ return new class extends Migration
 
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->boolean('matriz')->default(false);
             $table->string('nome');
             $table->string('razao_social')->unique();
             $table->string('nome_fantasia')->nullable();
-            $table->boolean('matriz')->default(false);
             $table->string('cnpj')->unique();
             $table->string('email')->unique();
             $table->string('telefone')->unique()->nullable();
@@ -113,9 +113,9 @@ return new class extends Migration
             $table->date('prox_sessao')->nullable();
             $table->unsignedBigInteger('tipo_cliente_id')->nullable();
             $table->foreign('tipo_cliente_id')->references('id')->on('tipo_clientes');
+            $table->boolean('contrato');
             $table->timestamps();
         });
-
         DB::table('tipo_clientes')->insert([
             ['nome' => 'Tipo 1'],
             ['nome' => 'Tipo 2'],

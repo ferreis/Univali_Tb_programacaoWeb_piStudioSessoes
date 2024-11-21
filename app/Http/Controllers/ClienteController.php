@@ -23,24 +23,8 @@ class ClienteController extends Controller
     }
     public function store(Request $request)
     {
-        DB::transaction(function () use ($request) {
-            Cliente::create([
-            'razao_social' => $request->razao_social,
-            'nome_fantasia' => $request->nome_fantasia,
-            'cnpj' => $request->cnpj,
-            'email' => $request->email,
-            'telefone' => $request->telefone,
-            'endereco' => $request->endereco,
-            'cidade' => $request->cidade,
-            'estado' => $request->estado,
-            'cep' => $request->cep,
-            'pais' => $request->pais,
-            'prox_sessao' => $request->prox_sessao,
-            'tipo_cliente' => $request->tipo,
-            ]);
-        });
-
-        return redirect()->route('cliente.index');
+        Cliente::create($request->all());
+        return to_route('cliente.index');
     }
     public function show($id)
     {
@@ -50,25 +34,14 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::findOrFail($id);
-        return view('cliente.edit', compact('cliente'));
+        $tipo = TipoClientes::all();
+        return view('cliente.edit', compact('cliente', 'tipo'));
     }
     public function update(Request $request, $id)
     {
         $cliente = Cliente::findOrFail($id);
-        $cliente->razao_social = $request->razao_social;
-        $cliente->nome_fantasia = $request->nome_fantasia;
-        $cliente->cnpj = $request->cnpj;
-        $cliente->email = $request->email;
-        $cliente->telefone = $request->telefone;
-        $cliente->endereco = $request->endereco;
-        $cliente->cidade = $request->cidade;
-        $cliente->estado = $request->estado;
-        $cliente->cep = $request->cep;
-        $cliente->pais = $request->pais;
-        $cliente->prox_sessao = $request->prox_sessao;
-        $cliente->tipo_cliente = $request->tipo;
-        $cliente->save();
-        return Redirect::route('cliente.index');
+        $cliente->update($request->all());
+        return to_route('cliente.index');
     }
     public function destroy($id)
     {
